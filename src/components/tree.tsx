@@ -1,9 +1,10 @@
 import React from "react";
 import TreeSvg from "../assets/img/tree.svg";
 import { useSelector, useDispatch } from "react-redux";
-import { AppStoreState } from "../reducers/app-reducer";
+import { AppStoreState } from "../redux/reducers/app-reducer";
 import useWindowSize from "../utils/hooks/window-size";
 import { UIHelper } from "../utils/helpers/ui-helper";
+import { AppActions } from "../redux/actions/appActions";
 
 export default function Tree() {
   const isShaking = useSelector((state: AppStoreState) => state.isTreeShaking);
@@ -16,10 +17,7 @@ export default function Tree() {
     if (isShaking) {
       // Event sent
       timer = setTimeout(() => {
-        dispatch({
-          type: "dropApple",
-          payload: UIHelper.getRandomInRange(2, 7),
-        });
+        dispatch(AppActions.dropApples(UIHelper.getRandomInRange(2, 7)));
       }, 3000);
     }
     return () => {

@@ -1,7 +1,7 @@
 import React from "react";
 import BasketSvg from "../assets/img/basket.svg";
 import { useSelector } from "react-redux";
-import { AppStoreState } from "../reducers/app-reducer";
+import { AppStoreState } from "../redux/reducers/app-reducer";
 import useWindowSize from "../utils/hooks/window-size";
 
 export default function Basket() {

@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { AppStoreState } from "../reducers/app-reducer";
+import { AppStoreState } from "../redux/reducers/app-reducer";
 import Button from "./button";
 import Tree from "./tree";
 import Basket from "./basket";

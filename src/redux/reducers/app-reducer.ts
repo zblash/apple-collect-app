@@ -1,4 +1,4 @@
-import { UIHelper } from "../utils/helpers/ui-helper";
+import { UIHelper } from "../../utils/helpers/ui-helper";
 
 export interface AppStoreState {
   droppingAppleList: string[];

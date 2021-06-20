@@ -4,6 +4,7 @@ import useInterval from "../../utils/hooks/interval";
 import { useDispatch } from "react-redux";
 import { UIHelper, PositionProps } from "../../utils/helpers/ui-helper";
 import Apple from "./apple";
+import { AppActions } from "../../redux/actions/appActions";
 
 interface DropableAppleProps {
   id: string;
@@ -75,10 +76,7 @@ export default function DropableApple({ id, pagePos }: DropableAppleProps) {
 
       // Apple will be disappear on screen and basket apple will appear at basket
       timer = setTimeout(() => {
-        dispatch({
-          type: "appleDropped",
-          payload: id,
-        });
+        dispatch(AppActions.appleDropped(id));
       }, 1000);
     }
     return () => {
